@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        background-color: #FFFF99;
+        font-family: Arial;
+    }
+    
+    .divsWrapper > div {
+        position: relative;
+        width: 600px;
+        padding: 4px;
+        border-radius: 4px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        background-color: #EEEEEE;
+        border: 1px solid #999999;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        margin: 0;
+        margin-top: -1px;
+    }
+    
+    .divsWrapper > div:nth-of-type(2n) {
+        left: 20px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+    
+    .divsWrapper > div:nth-of-type(2n+1) > span:nth-of-type(1) {
+        color: grey;
+    }
+    
+    .divsWrapper > div:nth-of-type(2n+1) > span:nth-of-type(2) {
+        font-weight: 600;
+    }
+    
+    .divsWrapper > div:nth-of-type(2n) > span:nth-of-type(2) {
+        color: grey;
+    }
+    
+    .divsWrapper > div:nth-of-type(2n+1) {
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    
+    .divsWrapper > div:first-child {
+        border-top-right-radius: 4px;
+    }
+    
+    .divsWrapper > div:last-child {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+    span {
+        /*
+            z-index:1;
+            vertical-align: top;
+            
+*/
+    }
+    
+    span:nth-of-type(2n) {
+        float: right;
+        white-space: nowrap;
+        margin-right: -2px;
+    }
+    
+    span:nth-of-type(2n+1) {
+        width: auto;
+        overflow: hidden;
+        width: 100%;
+        margin-left: -2px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    
+    @media screen and (min-width: 600px) and (max-width: 800px) {
+        .divsWrapper > div {
+            width: 500px;
+        }
+    }
+    
+     @media screen and (min-width: 500px) and (max-width: 600px) {
+        .divsWrapper > div {
+            width: 400px;
+        }
+    }
+    
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        .divsWrapper > div {
+            width: 300px;
+        }
+    }
+    
+</style>
+
+<head> </head>
+
+<body>
+    <div class="divsWrapper">
+        <div> <span>Short text</span>&nbsp; <span>Is short</span> </div>
+        <div> <span>A little bit longer text</span> <span>Is longer</span> </div>
+        <div> <span>A long text is here, totally for no reason</span> <span>Is long.</span> </div>
+        <div> <span>A long text is here also, for the same reason</span> <span>Is long too!</span> </div>
+        <div> <span>OK</span> <span>OK</span> </div>
+    </div>
+</body>
+
+</html>
